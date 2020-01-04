@@ -1,0 +1,77 @@
+<%- include("./partials/header.ejs") %>
+
+	<div class="ui newbook text container segment">
+
+		<div class="ui huge header">Add a new Book Review!</div>
+
+		<form action="/books" method="POST" class="ui form">
+
+			<div class="field">
+				<label>Book Title</label>
+				<input type="text" name="book[title]" placeholder="Book Title" required>
+			</div>
+
+			<div class="field">
+				<label>URL of Book Cover Image</label>
+				<input type="text" name="book[image]" placeholder="URL of Book Cover image" required>
+			</div>
+
+			<div class="field">
+				<label>Book Summary</label>
+				<textarea name="book[description]" required></textarea>
+			</div>
+
+			<div class="field">
+				<label>Book Review</label>
+				<textarea name="book[review]" required></textarea>
+			</div>
+
+			<div class=" grouped fields">
+
+				<label for="book[rating]">Rating</label>
+
+				<div class="field">
+			      <div class="ui radio checkbox">
+			        <input type="radio" name="book[rating]" tabindex="0" class="hidden" value="1">
+			        <label><i class="yellow star icon"></i></label>
+			      </div>
+			    </div>
+
+			    <div class="field">
+			      <div class="ui radio checkbox">
+			        <input type="radio" name="book[rating]" tabindex="0" class="hidden" value="2">
+			        <label><i class="yellow star icon"> </i><i class="yellow star icon"></i></label>
+			      </div>
+			    </div>
+
+			    <div class="field">
+			      <div class="ui radio checkbox">
+			        <input type="radio" name="book[rating]" tabindex="0" class="hidden" value="3">
+			        <label><i class="yellow star icon"></i> <i class="yellow star icon"></i> <i class="yellow star icon"></i></label>
+			      </div>
+			    </div>
+
+			    <div class="field">
+			      <div class="ui radio checkbox">
+			        <input type="radio" name="book[rating]" tabindex="0" class="hidden" value="4">
+			        <label><i class="yellow star icon"></i> <i class="yellow star icon"></i> <i class="yellow star icon"></i> <i class="yellow star icon"></i></label>
+			      </div>
+			    </div>
+
+			    <div class="field">
+			      <div class="ui radio checkbox">
+			        <input type="radio" name="book[rating]" tabindex="0" class="hidden" value="5">
+			        <label><i class="yellow star icon"></i> <i class="yellow star icon"></i> <i class="yellow star icon"></i> <i class="yellow star icon"></i> <i class="yellow star icon"></i></label>
+			      </div>
+			    </div>
+
+			</div>
+
+			<button class="ui basic green button" type="submit">Submit</button>
+
+		</form>
+
+	</div>
+	
+
+<%- include("./partials/footer.ejs") %>

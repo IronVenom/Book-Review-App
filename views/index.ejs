@@ -1,0 +1,34 @@
+<%- include("./partials/header") %>
+	<div class="ui text container segment" id="mainindexpage">
+		<div class="ui divided items">
+			<% books.forEach(function(book){%>
+				<div class="item">
+					<div class="image">
+						<img src="<%= book.image %>">
+					</div>
+					<div class="content">
+						<div class="header">
+							<a href="/books/<%=book._id%>"><%- book.title %></a>
+						</div>
+						<div class="meta">
+							<span>Rating:
+							<% for (var i = 0; i < book.rating; i++) { -%>
+								<i class="yellow star icon" style="display: inline"></i>
+							<% } -%>
+							
+							</span><% for (var i = 0; i < 5 - book.rating; i++) { -%>
+								<i class="yellow star outline icon" style="display: inline"></i>
+							<% } -%>
+						</div>
+						<div class="description" style="text-align: justify;">
+							<p><%- book.description.substring(0,100) %> ...</p>
+						</div>
+						<div class="extra">
+							<a href="/books/<%= book._id %>" class="ui teal basic button">Book Review</a>
+						</div>
+					</div>
+				</div>
+			<%});%>
+		</div>
+	</div>
+<%- include("./partials/footer") %>

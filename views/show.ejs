@@ -1,0 +1,36 @@
+<%- include("./partials/header") %>
+	<div class="ui container text segment" id="mainindexpage">
+		<div class="ui huge header center aligned"><%- book.title %></div>
+		<div class="meta">
+				<span>Rating:
+				<% for (var i = 0; i < book.rating; i++) { -%>
+					<i class="yellow star icon" style="display: inline"></i>
+				<% } -%>
+				<% for (var i = 0; i < 5 - book.rating; i++) { -%>
+					<i class="yellow star outline icon" style="display: inline"></i>
+				<% } -%>
+				</span>
+		</div>
+		<div class="ui divider"></div>
+		<img src="<%= book.image %>" class="ui image bordered medium centered">
+		<div class="ui divider"></div>
+		<div class="ui divided items">
+			<div class="item">
+				<div class="content" style="text-align: justify;">
+					<div class="header">Summary:</div>
+					<div class="description"><p><%- book.description %></p></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="content" style="text-align: justify;">
+					<div class="header">Book Review:</div>
+					<div class="description"><p><%- book.review %></p></div>
+				</div>
+			</div>
+		</div>
+		<a href="/books/<%=book._id%>/edit" class="ui yellow basic button">Edit Book Review</a>
+		<form id = "delete" method = "POST" action = "/books/<%= book._id%>?_method=DELETE" style = "display: inline;">
+			<button class="ui red basic button">Delete</button>
+		</form>
+	</div>
+<%- include("./partials/footer") %>
